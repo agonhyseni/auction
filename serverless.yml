@@ -33,6 +33,12 @@ functions:
       - http:
           method: GET
           path: auctions
+  getAuction:
+    handler: src/handlers/getAuction.handler
+    events:
+      - http:
+          method: GET
+          path: auction/{id}
 
 custom:
   AuctionsTable:
@@ -40,4 +46,3 @@ custom:
     arn: !GetAtt AuctionsTable.Arn
   bundle:
     linting: false
-  
